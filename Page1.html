@@ -30,10 +30,308 @@
             color: rgb(88, 82, 82);
         }
 
-        
+        .button {
+            text-align: left;
+        }
+
+        #title {
+            font-family: Bai jamjuree, "Helvetica Neue", Helvetica, sans-serif;
+            color: black;
+            text-indent: 2.5em;
+        }
+
+        #mode {
+            text-align: center;
+            color: white;
+        }
+
+        #mode {
+            background-color: rgb(226, 164, 193);
+            color: rgb(32, 29, 29);
+        }
+
+        #bt {
+            font-family: Bai jamjuree, "Helvetica Neue", Helvetica, sans-serif;
+            color: black;
+            background-color: orange;
+        }
+
+        #se {
+            font-family: Bai jamjuree, "Helvetica Neue", Helvetica, sans-serif;
+            color: white;
+            background-color: orange;
+        }
+
+        #txt {
+            width: 30%;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid rgb(95, 92, 92);
+            box-shadow: inset 0 1px 3px #ddd;
+            border-radius: 4px;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        .modal-login {
+            color: #636363;
+            width: 350px;
+            margin: 80px auto 0;
+        }
+
+        .modal-login .modal-content {
+            padding: 20px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        .modal-login .modal-header {
+            border-bottom: none;
+            position: relative;
+            justify-content: center;
+        }
+
+        .modal-login h4 {
+            text-align: center;
+            font-size: 26px;
+            margin: 30px 0 -15px;
+        }
+
+        .modal-login .form-control:focus {
+            border-color: #70c5c0;
+        }
+
+        .modal-login .form-control,
+        .modal-login .btn {
+            min-height: 40px;
+            border-radius: 3px;
+        }
+
+        .modal-login .close {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+        }
+
+        .modal-login .modal-footer {
+            background: #ecf0f1;
+            border-color: #dee4e7;
+            text-align: center;
+            justify-content: center;
+            margin: 0 -20px -20px;
+            border-radius: 5px;
+            font-size: 13px;
+        }
+
+        .modal-login .modal-footer a {
+            color: #999;
+        }
+
+        .modal-login .avatar {
+            position: absolute;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+            top: -70px;
+            width: 95px;
+            height: 95px;
+            border-radius: 50%;
+            z-index: 9;
+            background: #e62575;
+            padding: 15px;
+            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .modal-login .avatar img {
+            width: 100%;
+        }
+
+        .modal-login .btn {
+            color: #fff;
+            border-radius: 4px;
+            background: #e62575;
+            text-decoration: none;
+            transition: all 0.4s;
+            line-height: normal;
+            border: none;
+        }
+
+        .modal-login .btn:hover,
+        .modal-login .btn:focus {
+            background: #e62575;
+            outline: none;
+        }
+
+        #search {
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid rgb(95, 92, 92);
+            box-shadow: inset 0 1px 3px #ddd;
+            border-radius: 4px;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        #btse {
+            text-align: center;
+            background-color: rgb(231, 126, 189);
+            color: black;
+        }
     </style>
 
-    
+    <script>
+        $(document).ready(function () {
+            // variable to keep the selected row index
+            var rowID;
+            var ArrayID;
+            const dataSet = [
+                {
+                    "Fnames": "สมหญิง",
+                    "Lnames": "เรียบร้อย",
+                    "ids": "1720200563270",
+                    "accounts": "1254786320",
+                    "phones": "0678895432"
+                },
+                {
+                    "Fnames": "นิธินัย",
+                    "Lnames": "เหินเวหา",
+                    "ids": "1720200563271",
+                    "accounts": "2563489125",
+                    "phones": "0896574321"
+                },
+                {
+                    "Fnames": "นนนที",
+                    "Lnames": "มหามงคล",
+                    "ids": "1720200563273",
+                    "accounts": "4254786320",
+                    "phones": "0678567432"
+                },
+                {
+                    "Fnames": "บรรพต",
+                    "Lnames": "เจ็ดพี่น้องร่วมใจ",
+                    "ids": "1720200563272",
+                    "accounts": "356348912",
+                    "phones": "0656574322"
+                },
+                {
+                    "Fnames": "บารมี",
+                    "Lnames": "สมาธิปัญญา",
+                    "ids": "1720200563274",
+                    "accounts": "5254786320",
+                    "phones": "0678478432"
+                },
+                {
+                    "Fnames": "บุญพอ",
+                    "Lnames": "มีเท",
+                    "ids": "1720200563275",
+                    "accounts": "2563487625",
+                    "phones": "0896674321"
+                },
+                {
+                    "Fnames": "ชะรอย",
+                    "Lnames": "จุติมา",
+                    "ids": "1720200563276",
+                    "accounts": "1247786320",
+                    "phones": "0678895678"
+                },
+                {
+                    "Fnames": "หรูหรา",
+                    "Lnames": "ออมตอง",
+                    "ids": "1720200563277",
+                    "accounts": "2563443225",
+                    "phones": "0896554321"
+                },
+                {
+                    "Fnames": "บรรจง ",
+                    "Lnames": "หนึ่งในยุทธจักร",
+                    "ids": "1720200563278",
+                    "accounts": "6223478632",
+                    "phones": "0674456732"
+                },
+                {
+                    "Fnames": "วรานุช",
+                    "Lnames": "สำราญเนตร",
+                    "ids": "1720200563279",
+                    "accounts": "8564489125",
+                    "phones": "0896334321"
+                }
+            ];
+
+
+            var table = $('#myTable').DataTable({
+                responsive: true,       //for responsive column display
+                deferRender: true,      //if large data, use this option
+                data: dataSet,
+                columns: [
+
+                    { data: "Fnames", title: "ชื่อ" },
+                    { data: "Lnames", title: "นามสกุล" },
+                    { data: "ids", title: "เลขประจำตัวประชาชน" },
+                    { data: "accounts", title: "เลขบัญชี" },
+                    { data: "phones", title: "เบอร์โทรศัพท์" },
+                    { title: "Action", orderable: false, defaultContent: " <button class='btn btn-primary my-1'>ดูข้อมูลเพิ่มเติม</button>" }
+                ],
+                columnDefs: [
+                    // make the last column align right, also target: "_all"
+                    { "className": "dt-center", "targets": 5 }
+                ]
+            });
+
+
+            // ดูเพิ่มเติม
+            $('#myTable tbody').on('click', '.btn-primary', function () {
+                window.location.href = "./ข้อมูลรายบุคคล.html";
+            });
+
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $("#login").click(function () {
+                $("#myModal").modal("show");
+            });
+
+            $("#btnlogin").click(function () {
+                let username = $("#username").val();
+                let password = $("#password").val();
+
+                if (username == "admin" && password == "1234") {
+                    window.location.replace("./admin.html");
+                }
+                else {
+                    window.location.replace("./Page1login.html");
+                }
+            });
+
+            $("#loginreport").click(function () {
+                $("#myModalreport").modal("show");
+            });
+
+            $("#btnloginreport").click(function () {
+                let username = $("#username").val();
+                let password = $("#password").val();
+
+                if (username == "admin" && password == "1234") {
+                    window.location.replace("./admin.html");
+                }
+                else {
+                    window.location.replace("./แจ้งข้อมูล.html");
+                }
+            });
+        });
+
+    </script>
 </head>
 
 <body background="./pro/background.jpg" BGPROPERTIES="FIXED">
@@ -80,7 +378,102 @@
 
 
 
+    <br>
 
+    <p id="title">แหล่งรวมรายชื่อให้คุณสามารถเช็คประวัติคนที่ต้องการเพื่อตรวจสอบให้แน่ใจ </p>
+    <p id="title">เมื่อคุณทำการซื้อ-ขายกับบุคคลดังกล่าว ซึ่งทุกคนสามารถเข้ามาเป็นส่วนหนึ่ง</p>
+    <p id="title">ของสังคมการแลกเปลี่ยนข้อมูลนี้ได้ โดยการสมัครสมาชิกเพื่อแจ้งข้อมูล </p>
+    <p id="title">คนที่มีประวัติการโกงขึ้นเว็บไซต์ หรือ เพิ่มข้อมูลเครดิตให้กับคนที่มีรีวิวดี </p>
+
+    <div class="button my-4">
+
+        <p id="mode">
+            <br>
+            ค้นหาจาก&nbsp;&nbsp;&nbsp;
+            ชื่อ&nbsp;&nbsp;&nbsp;
+            นามสกุล&nbsp;&nbsp;&nbsp;
+            เลขประจำตัวบัตรประชาชน&nbsp;&nbsp;&nbsp;
+            เลขบัญชีธนาคาร&nbsp;&nbsp;&nbsp;
+            เบอร์โทรศัพท์
+            <br>
+            <br>
+        </p>
+
+        <div class="container my-3">
+            <table id="myTable" class="table table-striped table-bordered" style="width:100%">
+            </table>
+        </div>
+
+    </div>
+
+
+
+    <!-- Modal Login -->
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog modal-login">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="avatar">
+                        <img src="pro/avata.jpg" alt="Avatar">
+                    </div>
+                    <h4 class="modal-title">Login</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form action="./Page1login.html">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="username" placeholder="Username"
+                                required="required">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="password" placeholder="Password"
+                                required="required">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-lg btn-block login-btn"
+                                id="btnlogin">Login</button>
+                        </div>
+                        <p style="text-align: center; "><a href="./register.html">Register </a></p>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal LoginReport -->
+    <div id="myModalreport" class="modal fade">
+        <div class="modal-dialog modal-login">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="avatar">
+                        <img src="pro/avata.jpg" alt="Avatar">
+                    </div>
+                    <h4 class="modal-title">Login</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form action="./admin.html">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="username" placeholder="Username"
+                                required="required">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="password" placeholder="Password"
+                                required="required">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-lg btn-block login-btn"
+                                id="btnloginreport">Login</button>
+                        </div>
+                        <p style="text-align: center;"><a href="./register.html">Register </a></p>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
