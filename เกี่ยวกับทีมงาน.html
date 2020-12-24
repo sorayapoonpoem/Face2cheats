@@ -2,61 +2,234 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>หน้าหลัก</title>
-    <link rel="stylesheet" href="./js/bootstrap.min.css">
-    <link rel="stylesheet" href="./js/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" href="./js/responsive.bootstrap4.min.css">
-    <link rel="stylesheet" href="./js/sweetalert2.min.css">
-    <link rel="stylesheet" href="./js/css.css">
-    <link rel="stylesheet" href="./js/font-awesome.min.css">
-    <script src="./js/jquery.min.js"></script>
-    <script src="./js/popper.min.js"></script>
-    <script src="./js/bootstrap.min.js"></script>
-    <script src="./js/bootbox.min.js"></script>
-    <script src="./js/jquery.dataTables.min.js"></script>
-    <script src="./js/dataTables.bootstrap4.min.js"></script>
-    <script src="./js/dataTables.responsive.min.js"></script>
-    <script src="./js/responsive.bootstrap4.min.js"></script>
-    <script src="./js/sweetalert2.all.min.js"></script>
-    <style>
-        body {
-            background-attachment: fixed;
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Register</title>
+	<link rel="stylesheet" href="./js/bootstrap.min.css">
+	<script src="./js/jquery.min.js"></script>
+	<script src="./js/popper.min.js"></script>
+	<script src="./js/bootstrap.min.js"></script>
+
+	<style>
+		body {
+			background-attachment: fixed;
+		}
+
+		.navbar {
+			font-family: Bai jamjuree, "Helvetica Neue", Helvetica, sans-serif;
+			color: rgb(88, 82, 82);
+		}
+
+		#Fname,
+		#Lname {
+			width: 48%;
+			margin: 8px 0;
+			display: inline-block;
+			border: 1px solid rgb(95, 92, 92);
+			box-shadow: inset 0 1px 3px #ddd;
+			border-radius: 4px;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			padding-left: 20px;
+			padding-right: 20px;
+			padding-top: 5px;
+			padding-bottom: 5px;
+		}
+
+		
+
+		#email,
+		#address,
+		#username,
+		#password {
+			width: 100%;
+			margin: 8px 0;
+			display: inline-block;
+			border: 1px solid rgb(95, 92, 92);
+			box-shadow: inset 0 1px 3px #ddd;
+			border-radius: 4px;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			padding-left: 20px;
+			padding-right: 20px;
+			padding-top: 5px;
+			padding-bottom: 5px;
+		}
+
+		#day,
+		#month,
+		#year {
+			width: 32%;
+			margin: 8px 0;
+			display: inline-block;
+			border: 1px solid rgb(95, 92, 92);
+			box-shadow: inset 0 1px 3px #ddd;
+			border-radius: 4px;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			padding-left: 20px;
+			padding-right: 20px;
+			padding-top: 5px;
+			padding-bottom: 5px;
+		}
+
+		#checks {
+
+			color: rgb(98, 98, 226);
+
+		}
+
+		#regis {
+			text-align: center;
+			background-color: rgb(235, 96, 179);
+			color: white;
+		}
+
+		.modal-login {
+            color: #636363;
+            width: 350px;
+            margin: 80px auto 0;
         }
 
-        .navbar {
-            font-family: Bai jamjuree, "Helvetica Neue", Helvetica, sans-serif;
-            color: rgb(88, 82, 82);
+        .modal-login .modal-content {
+            padding: 20px;
+            border-radius: 5px;
+            border: none;
         }
 
-        
-    </style>
+        .modal-login .modal-header {
+            border-bottom: none;
+            position: relative;
+            justify-content: center;
+        }
 
-    
+        .modal-login h4 {
+            text-align: center;
+            font-size: 26px;
+            margin: 30px 0 -15px;
+        }
+
+        .modal-login .form-control:focus {
+            border-color: #70c5c0;
+        }
+
+        .modal-login .form-control,
+        .modal-login .btn {
+            min-height: 40px;
+            border-radius: 3px;
+        }
+
+        .modal-login .close {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+        }
+
+        .modal-login .modal-footer {
+            background: #ecf0f1;
+            border-color: #dee4e7;
+            text-align: center;
+            justify-content: center;
+            margin: 0 -20px -20px;
+            border-radius: 5px;
+            font-size: 13px;
+        }
+
+        .modal-login .modal-footer a {
+            color: #999;
+        }
+
+        .modal-login .avatar {
+            position: absolute;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+            top: -70px;
+            width: 95px;
+            height: 95px;
+            border-radius: 50%;
+            z-index: 9;
+            background: #e62575;
+            padding: 15px;
+            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .modal-login .avatar img {
+            width: 100%;
+        }
+
+        .modal-login .btn {
+            color: #fff;
+            border-radius: 4px;
+            background: #e62575;
+            text-decoration: none;
+            transition: all 0.4s;
+            line-height: normal;
+            border: none;
+        }
+
+        .modal-login .btn:hover,
+        .modal-login .btn:focus {
+            background: #e62575;
+            outline: none;
+        }
+	</style>
+<script>
+    $(document).ready(function () {
+        $("#login").click(function () {
+            $("#myModal").modal("show");
+        });
+
+        $("#btnlogin").click(function () {
+            let username = $("#username").val();
+            let password = $("#password").val();
+
+            if (username == "admin" && password == "1234") {
+                window.location.replace("./admin.html");
+            }
+            else{
+                window.location.replace("./Page1login.html");
+            }
+    });
+
+    $("#loginreport").click(function () {
+            $("#myModalreport").modal("show");
+        });
+
+        $("#btnloginreport").click(function () {
+            let username = $("#username").val();
+            let password = $("#password").val();
+
+            if (username == "admin" && password == "1234") {
+                window.location.replace("./admin.html");
+            }
+            else{
+                window.location.replace("./แจ้งข้อมูล.html");
+            }
+    });
+});
+
+</script>
 </head>
 
 <body background="./pro/background.jpg" BGPROPERTIES="FIXED">
+	<nav class="navbar navbar-expand-sm navbar-light  sticky-top " style=" background-color: #fadee1;"
+		style="text-align: right">
+		<div class=" container-fluid">
 
+			<a class="navbar-brand mx-auto" href="#"><img src="pro/logo.PNG"></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+				<span class="navbar-toggler-icon"></span>
+			</button>
 
-    <nav class="navbar navbar-expand-sm navbar-light  sticky-top " style=" background-color: #fadee1;"
-        style="text-align: right">
-        <div class=" container-fluid">
-
-            <a class="navbar-brand mx-auto" href="#"><img src="pro/logo.PNG"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse " id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <!-- ml to mr, yeah make sense.. -->
-                    <li class="nav-item ">
+			<div class="collapse navbar-collapse " id="navbarResponsive">
+				<ul class="navbar-nav ml-auto">
+					<!-- ml to mr, yeah make sense.. -->
+					<li class="nav-item ">
                         <a class="nav-link" href="./Page1.html">หน้าหลัก</a>
-                    </li>
-
-                    <li class="nav-item" id="navlink">
-                        <a class="nav-link" href="./เกี่ยวกับทีมงาน.html">เกี่ยวกับทีมงาน </a>
                     </li>
                     <li class="nav-item" id="navlink">
                         <button type="button" id="loginreport" class="btn">แจ้งข้อมูลผู้ขาย</button>
@@ -72,15 +245,156 @@
                     <li class="nav-item" id="navlink">
                         <a class="nav-link" href="./register.html"><u>สมัครสมาชิก</u></a>
                     </li>
-                </ul>
+
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container p-20 my-3">
+		<table class="table ">
+            
+               <h3 style="text-align: center"><b>เกี่ยวกับทีมงาน</b></h3> 
+               <p style="text-align: center">ปัจจุบันมีคนโดนโกงเงินจากการซื้อของออนไลน์เป็นจำนวนมาก <br>
+                พวกเราจึงได้พัฒนาเว็ปไซต์นี้ขึ้นมาเพื่อให้เป็นประโยชน์แก่ทุกท่าน <br>
+                หากผิดพลาดประการใด ขออภัยมา ณ ที่นี้ด้วย</p>
+            </p>              
+            <p style="text-align:center " > - ทีมงาน Face2Cheats. -</p>
+                    
+            
+			<tbody>
+				<tr>
+
+					<td width="50%">
+						<div class="container p-10 my-3">
+							<p style="text-align: center"><img src="pro/admin1.jpg"></p>
+							<br>
+                            <p style="text-align: center">โสรยา พูลเพิ่ม
+                            <br>ติดต่อ <br> เบอร์โทร : 087-1985151 <br> Facebook : ใบเตย พูลเพิ่ม
+                    </p>
+							<b>
+
+
+
+							</b>
+
+					</td>
+	</div>
+
+	<td width="50%">
+		
+		<div class="container  my-3">
+			<p style="text-align: center"><img src="pro/admin2.jpg"></p>
+			<br>
+			<p style="text-align: center">ฐิติยา จินา
+                <br>ติดต่อ <br> เบอร์โทร : 085-7135184 <br> Facebook : Mmint tty
+        </p>
+			<b>
+		</div>
+
+	</td>
+
+	</tr>
+
+	</tbody>
+	</table>
+
+	</div>
+	<!-- Modal Login -->
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog modal-login">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="avatar">
+                        <img src="pro/avata.jpg" alt="Avatar">
+                    </div>
+                    <h4 class="modal-title">Login</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form action="/examples/actions/confirmation.php" method="post">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="username" placeholder="Username"
+                                required="required">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" name="password" placeholder="Password"
+                                required="required">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-lg btn-block login-btn" id="btnlogin">
+								<a class="nav-link" style="color: white;" href="./Page1login.html">Login</a></button>
+                        </div>
+                    </form>
+                </div>
+
             </div>
         </div>
-    </nav>
+    </div>
+
+    <!-- Modal Login -->
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog modal-login">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="avatar">
+                        <img src="pro/avata.jpg" alt="Avatar">
+                    </div>
+                    <h4 class="modal-title">Login</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form action="./admin.html">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="username" placeholder="Username"
+                                required="required">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="password" placeholder="Password"
+                                required="required">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-lg btn-block login-btn" id="btnlogin">Login</button>
+                        </div>
+                        <p style="text-align: center; "><a  href="./register.html">Register </a></p>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
 
 
+    <!-- Modal LoginReport -->
+    <div id="myModalreport" class="modal fade">
+        <div class="modal-dialog modal-login">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="avatar">
+                        <img src="pro/avata.jpg" alt="Avatar">
+                    </div>
+                    <h4 class="modal-title">Login</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form action="./admin.html">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="username" placeholder="Username"
+                                required="required">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="password" placeholder="Password"
+                                required="required">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-lg btn-block login-btn" id="btnloginreport">Login</button>
+                        </div>
+                        <p style="text-align: center;"><a  href="./register.html">Register </a></p>
+                    </form>
+                </div>
 
-
-
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

@@ -4,21 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>หน้าหลัก</title>
+    <title>แจ้งข้อมูล</title>
     <link rel="stylesheet" href="./js/bootstrap.min.css">
-    <link rel="stylesheet" href="./js/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" href="./js/responsive.bootstrap4.min.css">
-    <link rel="stylesheet" href="./js/sweetalert2.min.css">
-    <link rel="stylesheet" href="./js/css.css">
-    <link rel="stylesheet" href="./js/font-awesome.min.css">
     <script src="./js/jquery.min.js"></script>
     <script src="./js/popper.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
-    <script src="./js/bootbox.min.js"></script>
-    <script src="./js/jquery.dataTables.min.js"></script>
-    <script src="./js/dataTables.bootstrap4.min.js"></script>
-    <script src="./js/dataTables.responsive.min.js"></script>
-    <script src="./js/responsive.bootstrap4.min.js"></script>
     <script src="./js/sweetalert2.all.min.js"></script>
     <style>
         body {
@@ -30,20 +20,68 @@
             color: rgb(88, 82, 82);
         }
 
-        
+       
+
+        #Fname,
+        #Lname,#account{
+            width: 43%;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid rgb(95, 92, 92);
+            box-shadow: inset 0 1px 3px #ddd;
+            border-radius: 4px;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        #idcard,#phone,#product,#price{
+            width: 35%;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid rgb(95, 92, 92);
+            box-shadow: inset 0 1px 3px #ddd;
+            border-radius: 4px;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        #bank{            
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid rgb(95, 92, 92);
+            box-shadow: inset 0 1px 3px #ddd;
+            border-radius: 4px;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;  
+            padding-left: 20px;         
+            padding-right: 20px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        #report{
+         text-align: center;
+            background-color: rgb(235, 96, 179);
+            color: white;
+        }
     </style>
 
-    
 </head>
 
 <body background="./pro/background.jpg" BGPROPERTIES="FIXED">
-
-
     <nav class="navbar navbar-expand-sm navbar-light  sticky-top " style=" background-color: #fadee1;"
         style="text-align: right">
         <div class=" container-fluid">
 
-            <a class="navbar-brand mx-auto" href="#"><img src="pro/logo.PNG"></a>
+            <a class="navbar-brand mx-auto" href="#"><img src="pro/logo.png"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -52,35 +90,70 @@
                 <ul class="navbar-nav ml-auto">
                     <!-- ml to mr, yeah make sense.. -->
                     <li class="nav-item ">
-                        <a class="nav-link" href="./Page1.html">หน้าหลัก</a>
-                    </li>
-
+                        <a class="nav-link" href="#">หน้าหลัก</a>
+                    </li>                   
                     <li class="nav-item" id="navlink">
-                        <a class="nav-link" href="./เกี่ยวกับทีมงาน.html">เกี่ยวกับทีมงาน </a>
-                    </li>
-                    <li class="nav-item" id="navlink">
-                        <button type="button" id="loginreport" class="btn">แจ้งข้อมูลผู้ขาย</button>
-
+                        <a class="nav-link" href="#">เกี่ยวกับทีมงาน </a>
                     </li>
                     <li class="nav-item" id="navlink">
-                        <button type="button" id="login" class="btn">เข้าสู่ระบบ</button>
+                        <a class="nav-link" href="./โปรไฟล์ผู้ใช้.html">โปรไฟล์ผู้ใช้ </a>
+                    </li>
+                    <li class="nav-item" id="navlink">
+                        <a class="nav-link" id="login"><u>ออกจากระบบ</u></a>
 
                     </li>
-                    <li class="nav-item" id="navlink">
-                        |
-                    </li>
-                    <li class="nav-item" id="navlink">
-                        <a class="nav-link" href="./register.html"><u>สมัครสมาชิก</u></a>
-                    </li>
+
                 </ul>
             </div>
         </div>
     </nav>
 
+    <!-- เนื้อหา -->
+    <div class="container my-3">
+        <table class="table table-borderless">
 
+            <tbody>
+                <tr>
+                    <td>
+                        <h4 style="text-align: center;"><b>แจ้งข้อมูลผู้ขาย</b></h4>   
+                        <h5 class="my-3" style="text-align: center;">ชื่อ: ชะรอย     นามสกุล: จุติมา
+                            <br>เลขประจำตัวประชาชน: 1720200563276
+                        </h5>                                             
+                            <input type="radio" name="report" id="bad"> <b>แจ้งผู้ขายที่ควรระวัง</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio" name="report" id="good"> <b>แจ้งผู้ขายที่ส่งจริง</b><br>
+                           
+                            เบอร์โทรศัพท์ <input type="text" id="phone" placeholder="เบอร์โทรศัพท์ "><br>
+                            ธนาคาร <select name="หมวดหมู่" id="bank">
+                                <option value="เดือน">กรุณาเลือกธนาคาร/Wallet</option>
+                                <option value="มกราคม">มกราคม</option>
+                                <option value="กุมภาพันธ์ ">กุมภาพันธ์ </option>
+                                <option value="มีนาคม ">มีนาคม </option>
+                                <option value="เมษายน ">เมษายน </option>
+                                <option value="พฤษภาคม">พฤษภาคม</option>
+                                <option value="มิถุนายน ">มิถุนายน </option>
+                                <option value="กรกฎาคม">กรกฎาคม</option>
+                                <option value="สิงหาคม">สิงหาคม</option>
+                                <option value="กันยายน">กันยายน</option>
+                                <option value="ตุลาคม">ตุลาคม</option>
+                                <option value="พฤศจิกายน ">พฤศจิกายน </option>
+                                <option value="ธันวาคม">ธันวาคม</option>
+                            </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            เลขบัญชี <input type="text" id="account" placeholder="เลขบัญชี/Wallet"><br>                            
+                            สินค้าที่สั่งซื้อ <input type="text" id="product" placeholder="สินค้าที่สั่งซื้อ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            จำนวนเงิน <input type="text" id="price" placeholder="จำนวนเงิน "><br>
+                            <p style="color: rgb(134, 130, 130);">หลักฐานยืนยันการซื้อขาย เช่น หลักฐานการโอนเงิน หลักฐานการเจรจาการซื้อขาย</p>
+                            <form id="formUpload" method="POST" enctype="multipart/form-data">
+                                <input type="file" name="fileUpload">                                
+                            </form>
+                            <p style="text-align: center;"><button type="button" id="report" class="btn" >
+                                <a style="color: white;" href="./Page1login.html">ส่งข้อมูล</a></button></p>
+                    </td>
 
+               
+            </tbody>
+        </table>
 
-
+    </div>
 </body>
 
 </html>
